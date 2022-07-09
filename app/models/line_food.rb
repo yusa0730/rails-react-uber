@@ -8,6 +8,7 @@ class LineFood < ApplicationRecord
 
   validates :count, numericality: { greater_than: 0 }
 
+  ## ActiveRecord_Relationのかたちで取得
   scope :active, -> { where(active: true) }
   ## 他の店舗の仮注文があるかどうかを確認する
   scope :other_restaurant, -> (picked_restaurant_id) { where.not(restaurant_id: picked_restaurant_id)}
