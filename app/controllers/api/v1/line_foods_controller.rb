@@ -2,6 +2,10 @@ module Api
   module V1
     class LineFoodsController < ApplicationController
       before_action :set_food, only: %i[create]
+
+      def index
+      end
+
       def create
         ## 他店舗でアクティブなLineFoodが存在するかどうか
         ## メインの処理に入る前に早期リターン
